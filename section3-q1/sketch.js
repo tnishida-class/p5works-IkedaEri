@@ -11,6 +11,7 @@ function balloon(t, tc, ts, bx, by, bc){
   let w = textWidth(t);
   let h = textAscent() + textDescent();
   let p = 10;
+  push();
   fill(bc);
   noStroke();
   rect(bx, by, w + 20, h + 15, 15);
@@ -19,4 +20,5 @@ function balloon(t, tc, ts, bx, by, bc){
   fill(tc);
   textSize(ts);
   text(t, p + bx, h + by);
+  pop();
 }
