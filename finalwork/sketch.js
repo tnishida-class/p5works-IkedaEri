@@ -57,7 +57,7 @@ function draw(){
       text("OK", windowWidth - windowWidth / 4 , windowHeight * 5 / 6);
       pop();
      }
-     else if (score >= 30 && score < 50){
+     else if (score >= 30 && score < 60){
        push();
        stroke(51);
        circle(windowWidth / 2, windowHeight - 125, 250);
@@ -101,7 +101,7 @@ function mouseClicked(){
 }
 
 function snowfarFromMouse(sb){
-  return dist(sb.x, sb.y, mouseX, mouseY) > 35;
+  return dist(sb.x, sb.y, mouseX, mouseY) > 40;
 }
 
 function boxfarFromMouse(pb){
