@@ -1,5 +1,5 @@
 // 最終課題を制作しよう
-let snowballs, get, presentboxes;
+let snowballs, presentboxes;
 let score = 0;
 let decolate = 0;
 
