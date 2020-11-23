@@ -7,8 +7,8 @@ function setup(){
   createCanvas(windowWidth, windowHeight);
   x = width / 2;
   y = height / 2;
-  vx = 8;
-  vy = 8;
+  vx = 3;
+  vy = 3;
 }
 
 function draw(){
@@ -26,9 +26,14 @@ function draw(){
   // if(y > height){ y = 0; }
   // if(y < 0){ y = height; }
 
+  // 反対側から出てくる　（別）
+  //  x = (x + width) % width;
+  //widthで割り切れるのはxがwidthになった時だけ、それ以外では(x+width)をwidthで割った余りはx
+  // y = (y + height) % height;
+
 　// 端の処理パターン (2) 跳ね返る
   if(x < 0 || x > width){ vx = -1 * vx; }
-  if(y > height){ vy = -1 * vy; }
+  if(y < 0 || y > height){ vy = -1 * vy; }
   x = constrain(x, 0, width);
   y = constrain(y, 0, height);
 }

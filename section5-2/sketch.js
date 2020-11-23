@@ -16,20 +16,32 @@ function draw(){
     ellipse(b.x, b.y, b.size);
     b.x += b.vx;
     b.y += b.vy;
+}
+let s = second();
+if(s < 30 && s > 25){
+  const b = {
+    x: random(0, windowWidth),
+    y: random(0, windowHeight),
+    size: random(10, 60),
+    vx: random(1, 6),
+    vy: random(1, 6)
   }
-
+  balls.push(b);
+}
   // 画面外に出たボールを配列から削除する（関数を引数として渡す書き方を使っています）
   balls = balls.filter(isInTheWindow);
 }
+
 
 function mouseDragged(){
   const dx = mouseX - pmouseX;
   const dy = mouseY - pmouseY;
   if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
+    const b = { x: mouseX, y: mouseY, size: random(10,60), vx: dx, vy: dy }
     balls.push(b);
   }
 }
+
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
